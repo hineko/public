@@ -12,10 +12,12 @@ gettok(char *buf, int bufsize)
 {
 	char c;
 	
-	while((c = getchar() != EOF)
+	while((c = getchar()) != EOF)
 	{
-		if(isspace(c)) continue;
-		
+		if(isspace(c))
+		{
+			 continue;
+		}
 		switch(c)
 		{
 		case '+':
