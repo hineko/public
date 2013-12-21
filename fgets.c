@@ -3,13 +3,19 @@
 
 int main()
 {
-	char s[1];
+	char s[0];
 	if(fgets(s,sizeof(s),stdin) != NULL)
 	{
 		if(isspace(*s))
 		{
 			printf("a");
 		}
+		
+		if(isprint(*s))
+		{
+			printf("c");
+		}
+		
 		fputs(s,stdout);
 	} else
 	{
