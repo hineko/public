@@ -13,25 +13,34 @@ int strings(char *buf, int bufsize)
 	
 	i=0;
 	
-	while((c=getchar())!=EOF)
+	while((c=getchar()) != '\n')
 	{
+		// ‹ó”’•¶š‚ª‚ ‚é‚©‚Ç‚¤‚©
 		if(isspace(c))
 		{
-			continue;
+			if(i==0)
+			{
+				// ‚»‚Ì‹ó”’‚ªÅ‰‚Ì•¶š‚È‚çŒJ‚è•Ô‚·
+				continue;
+			}
+			else
+			{
+				// •¶š‚ª“ü—Í‚³‚ê‚Ä‚¢‚ê‚ÎI—¹
+				return 1;
+			}
 		}
 		
+		// •\¦•¶š‚Å‚ ‚é‚©‚Ç‚¤‚©
 		if(isprint(c))
 		{
-			do {
-				buf[i] = c;
-				i++;
-			}while((c=getchar())!=EOF && isprint(c) && !isspace(c));
-			return 1;
+			buf[i] = c;
+			i++;
+			
 		}else{
 			fprintf(stderr,"invalid char '%c'\n",c);
 		}
 	}
-	return 0;
+	return 1;
 }
 
 int main(int argc,char *argv[])
