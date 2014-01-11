@@ -33,6 +33,21 @@ int strings(char *buf, int bufsize)
 		// •\Ž¦•¶Žš‚Å‚ ‚é‚©‚Ç‚¤‚©
 		if(isprint(c))
 		{
+			if(c == '+' || c == '-' || c == '=')
+			{
+				if(i==0)
+				{
+					return 1;
+				}
+				else
+				{
+					// ‚·‚Å‚É‰½‚©‚ª“ü—Í‚³‚ê‚Ä‚¢‚é
+					printf("[%c]\n",c);
+					return 1;
+				}
+			}
+			
+			
 			buf[i] = c;
 			i++;
 			
