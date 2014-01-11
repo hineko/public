@@ -8,22 +8,24 @@ int main()
 	{
 		if(isspace(*s))
 		{
-			printf("a");
+			printf("a\n");
 		}
 		
 		if(isprint(*s))
 		{
-			printf("c");
+			printf("c\n");
 		}
 		
-		fputs(s,stdout);
+		printf("%s",s);
+//		fputs(s,stdout);
 	} else
 	{
 		if(isspace(*s))
 		{
-			printf("b");
-		}		
-		fputs(s,stderr);
+			printf("b\n");
+		}
+		printf("%d",*s);
+//		fputs(s,stderr);
 	}
 	
 	return 0;

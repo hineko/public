@@ -12,6 +12,7 @@ gettok(char *buf, int bufsize)
 {
 	int i = 0;
 	char c;
+	enum tok;
 	
 	/*
 		スペースがあると区切るものとする
@@ -33,7 +34,6 @@ gettok(char *buf, int bufsize)
 			buf[i] = c;
 			i++;
 			return OpPlus;
-			
 		case '-':
 			buf[i] = c;
 			i++;
@@ -69,7 +69,7 @@ int main()
 
 	while((tok = gettok(buf,sizeof(buf))) != EndOfFile)
 	{
-		printf("tok = %d; buf = {%s}\n", tok, buf);
+		printf("tok = %d; buf = [%s]\n", tok, buf);
 	}
 	
 	return 0;

@@ -7,13 +7,28 @@
 enum TokType
 {
 	OpPlus,OpMinus,OpEqual,
-	Number,None,
+	Number,EndOfFile,
+};
+
+static enum TokType gettok(char *buf, int bufsiz)
+{
+	do{
+	if(isspace(buf));
+	
+	}while(getchar(c));
 }
 
 int main(int argc,char *argv[])
 {
-	TokType toktype;
+	enum TokType tok;
+	char buf[100];
 	int c;
+	
+	while((tok = gettok(buf,sizeof(buf))) != EndOfFile)
+	{
+		printf("tok = %d; buf = {%s}\n",tok,buf);
+	}
+	
 	while((c=getchar()) != EOF)
 	{
 		// •W€‹ó”’—Ş•¶š‚ª‚ ‚ê‚Î^‚ğ•Ô‚· ' ' '\t' '\n'‚È‚Ç
@@ -25,7 +40,6 @@ int main(int argc,char *argv[])
 		if(c == '+' || c == '-' || c == '=')
 //		 if(c == OpPlus || c == OpMinus || c == OpEqual)
 		{
-			toktype = TokType.OpPlus;
 			putchar(c);
 			break;
 		}
@@ -33,7 +47,6 @@ int main(int argc,char *argv[])
 		else if(isdigit(c))
 		{
 			do {
-				toktype = TokType.Number;
 				putchar(c);
 			}while((c = getchar()) != EOF && isdigit(c));
 			break;

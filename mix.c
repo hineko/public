@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 				j++;
 			}
 			
-			str1[j] = ' ';
+			str1[j+1] = ' ';
 			printf("%s",str1);
 
 			
