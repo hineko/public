@@ -1,20 +1,16 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 int strings(char *buf, int bufsize)
 {
-	int i;
+	int i = 0;
 	char c;
 	
 	// 配列の初期化
-	for(i=0;i<bufsize;i++)
-	{
-		buf[i] = '\0';
-	}
+	memset(buf,'\0',bufsize);
 	
-	i=0;
-	
-	while((c=getchar()) != '\n')
+	while((c=getchar()) != EOF)
 	{
 		// 空白文字があるかどうか
 		if(isspace(c))
@@ -40,6 +36,7 @@ int strings(char *buf, int bufsize)
 				if(i==0)
 				{
 					// 前に何も文字がない場合
+					buf[i] = c;
 					return 1;
 				}
 				else
@@ -57,7 +54,7 @@ int strings(char *buf, int bufsize)
 			fprintf(stderr,"invalid char '%c'\n",c);
 		}
 	}
-	return 1;
+	return 0;
 }
 
 int main(int argc,char *argv[])
