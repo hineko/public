@@ -42,6 +42,11 @@ int strings(char *buf, int bufsize)
 				else
 				{
 					// すでに何かが入力されている
+					buf[i++] = ']';
+					buf[i++] = '\n';
+					buf[i++] = '[';
+					buf[i] = c;
+					// これはひどい？
 					return 1;
 				}
 			}
