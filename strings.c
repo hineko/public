@@ -46,6 +46,7 @@ int strings(char *buf, int bufsize)
 					buf[i++] = '\n';
 					buf[i++] = '[';
 					buf[i] = c;
+					
 					// これはひどい？
 					return 1;
 				}
