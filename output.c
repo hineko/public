@@ -10,21 +10,15 @@ int main(int argc, char* argv[])
 	
 	while(fgets(c,sizeof(c),stdin) != NULL)
 	{
-loop:
-		printf("[");
-
-		while( c[i] != ' ')
-		{
-			printf("%c",c[i]);
-			i++;
-		}
-		i++;
-		printf("]\n");
-		if( c[i] != '\n')
-		{
-			goto loop;
-		}
-		
+		do{
+			printf("[");
+			while( c[i] != ' ')
+			{
+				printf("%c",c[i]);
+				i++;
+			}
+			printf("]\n");
+		}while(c[i] != '\n');
 		i=0;
 	}
 	return 0;
