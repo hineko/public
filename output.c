@@ -11,12 +11,11 @@ int main(int argc, char* argv[])
 	{
 		if( c != ' ' && c != '\n')
 		{
-			printf("[");
 			printf("%c",c);
 		}
 		else
 		{
-			printf("]\n");
+			printf("\n");
 		}
 	}
 	
