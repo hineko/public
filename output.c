@@ -5,21 +5,20 @@
 // 吾輩はプログラムである。まだ中身はない
 int main(int argc, char* argv[])
 {
-	char c[100];
-	int i=0;
-	
-	while(fgets(c,sizeof(c),stdin) != NULL)
+	char c;
+
+	while((c=getchar()) != EOF)
 	{
-		do{
+		if( c != ' ' && c != '\n')
+		{
 			printf("[");
-			while( c[i] != ' ')
-			{
-				printf("%c",c[i]);
-				i++;
-			}
+			printf("%c",c);
+		}
+		else
+		{
 			printf("]\n");
-		}while(c[i] != '\n');
-		i=0;
+		}
 	}
+	
 	return 0;
 }
