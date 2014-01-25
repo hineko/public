@@ -9,13 +9,16 @@ int main(int argc, char* argv[])
 
 	while((c=getchar()) != EOF)
 	{
-		if( c != ' ' && c != '\n')
+		if( c != ' ' )
 		{
 			printf("%c",c);
+		}else if ( c != '\n' )
+		{
+			printf("]\n[");
 		}
 		else
 		{
-			printf("\n");
+			printf("]\n");
 		}
 	}
 	
