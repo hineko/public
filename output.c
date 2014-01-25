@@ -4,35 +4,21 @@
 // 吾輩はプログラムである。まだ中身はない
 int main(int argc, char* argv[])
 {
+	char c;
 	
-	char tmp;
-	char c[100];
-	int i,prev;
-	i = prev = 0;
-	
-	do
+	while((c=getchar()) != EOF)
 	{
-		tmp = getchar();
+		printf("[");
 		
-		if(tmp != ' ' && tmp != '\n')
+		if( c != ' ')
 		{
-			c[i] = tmp;
-			i++;
+			printf("%c",c);
 		}
-		else
-		{
-			if(i>0)
-			{
-				printf("[%s]\n",c);
-				prev = i;
-				for(i=0;i<=prev;i++)
-				{
-					c[i] = '\0';
-				}
-				i=0;
-			}
-		}
-	}while( tmp != EOF );
+		
+		printf("]\n");
+	}
+	
+	
 
 	return 0;
 }
